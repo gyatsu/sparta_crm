@@ -16,17 +16,7 @@ class CustomersController < ApplicationController
     redirect_to @customer
   end
 
-  private
-
-  def customer_params
-    params.require(:customer).permit(
-      :family_name,
-      :given_name,
-      :email
-    )
-  end
-
-  def edit
+ def edit
   end
 
   def update
@@ -39,7 +29,14 @@ class CustomersController < ApplicationController
 end
 
 
+  private
 
-
+  def customer_params
+    params.require(:customer).permit(
+      :family_name,
+      :given_name,
+      :email
+    )
+  end
 
 
