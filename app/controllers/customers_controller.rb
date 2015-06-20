@@ -21,10 +21,16 @@ class CustomersController < ApplicationController
 
   end
 
- def edit
+  def edit
+    @customer = Customer.find(params[:id])
   end
 
+
+
   def update
+    @customer = Customer.find(params[:id])
+    @customer.update_attributes(customer_params)
+    redirect_to @customer
   end
 
 
