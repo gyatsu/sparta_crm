@@ -52,7 +52,9 @@ end
     params.require(:customer).permit(
       :family_name,
       :given_name,
-      :email
+      :email,
+      :company_id
+
     )
   end
 
@@ -60,6 +62,4 @@ end
       @customer = Customer.find(params[:id])
 
   end
-
-
 
