@@ -6,6 +6,10 @@ class CustomersController < ApplicationController
     @customer = Customer.new
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
   def create
     @customer = Customer.new(customer_params)
     @customer.save
@@ -28,8 +32,7 @@ class CustomersController < ApplicationController
   def update
   end
 
-  def show
-  end
+
 
   def destroy
   end
