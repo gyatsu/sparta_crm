@@ -3,28 +3,28 @@
     <h1>顧客情報一覧</h1>
     <%= search_form_for @q do |f| %>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 col-xs-12">
         <%= f.label :family_name, "姓" %>
         <%= f.search_field :family_name_cont,class: "form-control input-sm" %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 col-xs-12">
         <%= f.label :given_name, "名" %>
         <%= f.search_field :given_name_cont,class: "form-control input-sm" %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 col-xs-12">
         <%= f.label :given_name, "会社名" %>
         <%= f.search_field :company_name_cont,class: "form-control input-sm" %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 col-xs-12">
         <%= f.label :given_name, "電子メール" %>
         <%= f.search_field :email_cont,class: "form-control input-sm" %>
       </div>
@@ -40,10 +40,10 @@
     <% end %>
     <table class="table table-striped">
       <thead>
-        <th>姓</th>
-        <th>名</th>
-        <th>会社名</th>
-        <th>電子メール</th>
+        <th><%= sort_link(@q, :family_name, "姓") %></th>
+        <th><%= sort_link(@q, :given_name, "名") %></th>
+        <th><%= sort_link(@q, :company_name, "会社名") %></th>
+        <th><%= sort_link(@q, :email, "電子メール") %></th>
         <th>リンク</th>
       </thead>
       <tbody>
