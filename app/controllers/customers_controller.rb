@@ -29,8 +29,11 @@ class CustomersController < ApplicationController
 
   def update
     @customer = Customer.find(params[:id])
-    @customer.update_attributes(customer_params)
+    if @customer.update(customer_params)
     redirect_to @customer
+    else
+      render :edit
+    end
   end
 
 
